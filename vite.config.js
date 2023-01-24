@@ -8,6 +8,7 @@ const pathSrc = path.resolve(__dirname, "./src");
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    base: 'trial-day',
     plugins: [vue()],
     resolve: {
         alias: {
