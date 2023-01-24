@@ -5,6 +5,7 @@
                       :mask="'0000 0000 0000 0000'"
                       :placeholder="'•••• •••• •••• ••••'"
                       :minLength="19"
+                      :masterCard="true"
                       :class="v$.card.$error ? 'error' : ''"
                       @blur="card"/>
       <p class="form__input-error" v-for="error of v$.card.$errors" :key="error.$uid">
@@ -35,7 +36,7 @@
 <script setup>
 import InputComponent from "./ui-components/InputComponent.vue";
 import ButtonComponent from "./ui-components/ButtonComponent.vue";
-import {computed, onBeforeMount, onMounted, reactive, ref, toRefs} from "vue";
+import {computed, reactive, ref} from "vue";
 import {maxLength, minLength, helpers, required, } from "@vuelidate/validators";
 import {useVuelidate} from "@vuelidate/core";
 import FormSelect from "./ui-components/FormSelect.vue";

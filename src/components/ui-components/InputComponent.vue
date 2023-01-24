@@ -1,7 +1,7 @@
 <template>
   <div class="input__wrap">
     <span class="input__title typography_input-title">{{props.title}}</span>
-    <img class="input__image" src="@/assets/images/mastercard.svg" v-if="props.src">
+    <img class="input__image" src="@/assets/images/mastercard.svg" alt="mastercard" v-if="props.masterCard">
     <input required :minlength="props.minLength" ref="el" @blur="$emit('blur', masked)" :placeholder="props.placeholder" class="input" :type="props.inputType">
   </div>
 </template>
@@ -32,8 +32,8 @@ const props = defineProps({
   title: {
     type: String
   },
-  src: {
-    type: String
+  masterCard: {
+    type: Boolean
   },
 })
 

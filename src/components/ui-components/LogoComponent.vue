@@ -1,6 +1,6 @@
 <template>
   <div class="logo">
-    <router-link to="/"><img class="logo__image" src="@/assets/images/Logo.svg" alt="PlanetLearn logo"></router-link>
+    <router-link to="/trial-day"><img class="logo__image" src="@/assets/images/Logo.svg" alt="PlanetLearn logo"></router-link>
   </div>
 </template>
 
