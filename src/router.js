@@ -5,7 +5,7 @@ export const router = createRouter({
     history: createWebHistory(),
     routes: [
         {
-            path: '/',
+            path: '/trial-day',
             name: 'Index',
             component: Index,
             meta: {layout: 'main'}
