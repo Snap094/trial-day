@@ -1,0 +1,137 @@
+//typography
+@mixin typography_h1 {
+  font-family: $font-main;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 58px;
+  color: $cl-font-black;
+
+  @include media-sm {
+    font-size: 32px;
+    line-height: 38px;
+  }
+}
+
+@mixin typography_extra-bold {
+  font-family: $font-main;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 29px;
+
+  @include media-sm {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+@mixin typography_bold {
+  font-family: $font-main;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+@mixin typography_semibold {
+  font-family: $font-main;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+@mixin typography_regular {
+  font-family: $font-main;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+@mixin typography_button {
+  font-family: $font-main;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+@mixin typography_helper {
+  font-family: $font-main;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: $cl-font-helper;
+}
+
+@mixin typography_placeholder {
+  font-family: $font-main;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: $cl-font-placeholder;
+}
+
+@mixin typography_font-outfit {
+  font-family: $font-outfit;
+}
+
+@mixin typography_font-dm-sans {
+  font-family: $font-dm-sans;
+}
+
+@mixin typography_input-title {
+  font-family: $font-main;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.typography_h1 {
+  @include typography_h1
+}
+
+.typography_bold {
+  @include typography_bold
+}
+
+.typography_button {
+  @include typography_button
+}
+
+.typography_helper {
+  @include typography_helper
+}
+
+.typography_placeholder {
+  @include typography_placeholder
+}
+
+.typography_semibold {
+  @include typography_semibold
+}
+
+.typography_extra-bold {
+  @include typography_extra-bold
+}
+
+.typography_font-outfit {
+  @include typography_font-outfit
+}
+
+.typography_font-dm-sans {
+  @include typography_font-dm-sans
+}
+
+.typography_regular {
+  @include typography_regular
+}
+
+.typography_input-title {
+  @include typography_input-title
+}
