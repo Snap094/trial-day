@@ -33,6 +33,7 @@
   height: 46px;
   padding-left: 16px;
   padding-right: 12px;
+  background-color: $cl-background;
   color: $cl-input-font;
   outline: 0;
 

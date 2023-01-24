@@ -1,3 +1,37 @@
+<template>
+  <form class="form" @submit.prevent>
+    <div class="form__input-wrap">
+      <InputComponent :title="'Card number'"
+                      :mask="'0000 0000 0000 0000'"
+                      :placeholder="'•••• •••• •••• ••••'"
+                      :minLength="19"
+                      :class="v$.card.$error ? 'error' : ''"
+                      @blur="card"/>
+      <p class="form__input-error" v-for="error of v$.card.$errors" :key="error.$uid">
+        {{ error.$message }}
+      </p>
+    </div>
+    <div class="form__card-cred">
+      <FormSelect :title="'Month'"
+                  :options="monthList"
+                  v-model="state.month"
+      />
+      <FormSelect :title="'Year'"
+                  :options="listYear"
+                  v-model="state.year"/>
+      <InputComponent :title="'CVC'"
+                      :mask="'000'"
+                      :placeholder="'•••'"
+                      :minLength="3"
+                      :inputType="'password'"
+                      @blur="cvc"
+                      :class="v$.cvc.$error ? 'error' : ''"
+      />
+    </div>
+    <ButtonComponent :disabled="v$.$invalid" class="button">Submit</ButtonComponent>
+  </form>
+</template>
+
 <script setup>
 import InputComponent from "./ui-components/InputComponent.vue";
 import ButtonComponent from "./ui-components/ButtonComponent.vue";
@@ -53,40 +87,6 @@ import useGetListYear from "../use/getListYear.js";
   }
 </script>
 
-<template>
-  <form class="form" @submit.prevent>
-    <div class="form__input-wrap">
-      <InputComponent :title="'Card number'"
-                      :mask="'0000 0000 0000 0000'"
-                      :placeholder="'•••• •••• •••• ••••'"
-                      :src="'src/assets/images/mastercard.svg'"
-                      :minLength="19"
-                      :class="v$.card.$error ? 'error' : ''"
-                      @godotest="card"/>
-      <p class="form__input-error" v-for="error of v$.card.$errors" :key="error.$uid">
-        {{ error.$message }}
-      </p>
-    </div>
-    <div class="form__card-cred">
-      <FormSelect :title="'Month'"
-                  :options="monthList"
-                  v-model="state.month"
-      />
-      <FormSelect :title="'Year'"
-                  :options="listYear"
-                  v-model="state.year"/>
-      <InputComponent :title="'CVC'"
-                      :mask="'000'"
-                      :placeholder="'•••'"
-                      :minLength="3"
-                      :inputType="'password'"
-                      @godotest="cvc"
-                      :class="v$.cvc.$error ? 'error' : ''"
-      />
-    </div>
-    <ButtonComponent :disabled="v$.$invalid" class="button">Submit</ButtonComponent>
-  </form>
-</template>
 
 
 <style lang="scss" scoped>

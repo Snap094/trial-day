@@ -1,17 +1,15 @@
 <template>
   <div class="input__wrap">
     <span class="input__title typography_input-title">{{props.title}}</span>
-    <img class="input__image" :src="props.src" v-if="props.src">
-    <input required :minlength="props.minLength" ref="el" @blur="$emit('godotest', masked)" :placeholder="props.placeholder" class="input" :type="props.inputType">
+    <img class="input__image" src="@/assets/images/mastercard.svg" v-if="props.src">
+    <input required :minlength="props.minLength" ref="el" @blur="$emit('blur', masked)" :placeholder="props.placeholder" class="input" :type="props.inputType">
   </div>
 </template>
 
 <script setup>
 import { useIMask } from 'vue-imask';
-import PromotionPrice from "../PromotionPrice.vue";
-import {useModelWrapper} from "../../use/modelWrapper.js";
 
-const emit = defineEmits(['modelValue','godotest'])
+const emit = defineEmits(['modelValue','blur'])
 const props = defineProps({
   inputType: {
     type: String,
@@ -37,16 +35,11 @@ const props = defineProps({
   src: {
     type: String
   },
-  shinima: {
-    type: Object
-  },
 })
 
 const { el, masked } = useIMask({
   mask: props.mask,
 });
-
-// let inputValue = useModelWrapper(props, emit, 'modelValue');
 
 </script>
 
