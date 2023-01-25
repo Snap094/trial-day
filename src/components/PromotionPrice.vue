@@ -4,7 +4,6 @@
     <p class="promotion-price__discount">$39.99/week</p>
   </div>
   <transition name="bounce">
-
     <div class="promotion-price" v-if="props.promotionEnded">
       <p class="promotion-price__price" :class="props.promotionEnded ? 'center_mob' : ''">Then $39.99/week</p>
     </div>
@@ -48,7 +47,7 @@ const props = defineProps({
 
     @include media-sm {
       font-weight: 600;
-      font-size:20px;
+      font-size: 20px;
       line-height: 20px;
     }
   }

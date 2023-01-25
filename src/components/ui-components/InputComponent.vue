@@ -92,16 +92,19 @@ const { el, masked } = useIMask({
       &.error {
         .input {
           border: 1px solid $cl_error;
-        }
-      }
 
-      &.valid {
-        .input {
-          border: 1px solid $cl_valid;
+          &:focus {
+            border: 1px solid $cl_error;
+          }
         }
       }
     }
 
+    &:focus {
+      &:valid {
+        border: 1px solid $cl-input-border;
+      }
+    }
     &:valid {
       border: 1px solid $cl_valid;
     }
